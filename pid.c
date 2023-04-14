@@ -131,7 +131,7 @@ float PID_separation(float speed)
 
         // Gate = 1.0;
 
-        pid.integral += pid.err;                                                                 // 积分控制值
+        pid.integral += pid.err; // 积分控制值
         pid.output = pid.Kp * pid.err + Gate * pid.Ki * pid.integral + pid.Kd * (pid.err - pid.err_k1); // 控制器输出量
 
         pid.err_k1 = pid.err; // 更新误差值
@@ -203,7 +203,7 @@ float PID_antiAllergy(float speed)
     {
         pid.err = pid.SetSpeed - pid.ActualSpeed;
 
-        pid.integral += pid.err;                                                                 // 积分控制值
+        pid.integral += pid.err; // 积分控制值
         pid.output = pid.Kp * pid.err + pid.Ki * pid.integral + pid.Kd * (pid.err - pid.err_k1); // 控制器输出量
 
         pid.err_k1 = pid.err; // 更新误差值
